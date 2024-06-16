@@ -4,7 +4,8 @@ import {
 } from "react-router-dom";
 
 import Home from "./Pages/Home";
-import AboutUs from "./Components/AboutUs";
+import Footer from "./Components/Footer";
+
 
 
 function App() {
@@ -15,7 +16,7 @@ function App() {
     },
     {
       path: "/features",
-      element: <AboutUs/>,
+      element: <Footer/>,
     },
   ]);
   return (

@@ -1,5 +1,6 @@
 import AboutUs from "../Components/AboutUs";
 import Features from "../Components/Features";
+import Footer from "../Components/Footer";
 import Navbar from "../Components/Navbar";
 
 function Home() {
@@ -39,6 +40,9 @@ function Home() {
       </div>
       <div className="mt-24">
         <AboutUs/>
+      </div>
+      <div className="mt-24">
+        <Footer/>
       </div>
     </>
   );
