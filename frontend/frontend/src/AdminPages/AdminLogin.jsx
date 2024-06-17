@@ -15,6 +15,8 @@ function AdminLogin() {
 
     function handleSubmit(e){
         e.preventDefault();
+        setUsername(e.target.elements.username.value)
+        setPassword(e.target.elements.password.value)
         axios.post("http://localhost:8000/api/users/auth",{username,password}).then((res)=>{
             dispatch(setReduxUser(res.data.user));
             localStorage.setItem("access_token",res.data.token)
@@ -34,10 +36,10 @@ function AdminLogin() {
                 <h2 className="text-3xl font-handlee font-bold text-center p-6 pt-16">Admin Login</h2>
                 <form onSubmit={handleSubmit} className="mx-16" >
                     <label htmlFor="username">Username:</label><br />
-                    <input type="text" onChange={(e)=>{setUsername(e.target.value)}} className="rounded border w-72 h-10 focus:border-sky-600 focus:outline-none focus:transition-all " required/><br /><br />
+                    <input type="text" id="username"  className="rounded border w-72 h-10 focus:border-sky-600 focus:outline-none focus:transition-all " required/><br /><br />
 
                     <label htmlFor="password">Password:</label><br />
-                    <input type="password" onChange={(e)=>{setPassword(e.target.value)}} className="rounded border w-72 h-10 focus:border-sky-600 focus:outline-none focus:transition-all" required /><br /><br />
+                    <input type="password" id="password"  className="rounded border w-72 h-10 focus:border-sky-600 focus:outline-none focus:transition-all" required /><br /><br />
 
                     <input type="submit" value="Login" className="bg-sky-600 text-white text-center w-72 h-10 rounded-full" />
 

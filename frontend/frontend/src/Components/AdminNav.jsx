@@ -23,7 +23,7 @@ function AdminNav() {
   return (
     <>
       <div className="flex">
-        <div className={`${isMenuOpen?'translate-x-0 transition-all':'-translate-x-full transition-all w-0 overflow-hidden md:w-60  md:translate-x-0'}  md:block`}>
+        <div className={`${isMenuOpen?'translate-x-0 transition-all':'-translate-x-full transition-all w-0 overflow-hidden md:w-60  md:translate-x-0'} z-20  md:block`}>
           <div className="bg-indigo-950 text-white min-h-screen px-4 py-4">
             <div className="container ">
               <div className="flex items-center gap-2">
@@ -60,7 +60,7 @@ function AdminNav() {
         <div className={` h-16 w-full border`}>
           <div>
             <IoMdMenu className={`md:hidden inline-block m-5 text-2xl`}  onClick={toggleMenu}/>
-            <div className={ `${isMenuOpen?'float-left':'float-right'} flex  m-4` }>
+            <div className={ `${isMenuOpen?'hidden':'float-right'} flex  m-4` }>
               <IoIosNotifications className="mt-1 inline-flex text-2xl text-gray-500" />
               <div className={` flex  text-gray-600 `}>
                 <div className="mx-2 h-8 w-8 rounded-full border"></div>
