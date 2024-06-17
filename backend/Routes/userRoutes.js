@@ -9,6 +9,6 @@ const checkAuthentication = require('../Middleware/auth')
 
     userRoutes.post('/users',checkAuthentication,createUser);
     userRoutes.get('/users',checkAuthentication,getAllUser);
-    userRoutes.get('/users/auth',loginUser);
+    userRoutes.post('/users/auth',loginUser);
 
 module.exports=userRoutes;

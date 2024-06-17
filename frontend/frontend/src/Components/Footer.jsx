@@ -12,7 +12,7 @@ function Footer() {
   return (
     <>
       <div className=" w-full bg-sky-900 ">
-        <div className=" flex justify-around pb-10">
+        <div className=" flex flex-wrap justify-around pb-10">
           <div className="w-[300px] mt-10">
             <div className="flex">
               <div>
@@ -113,7 +113,7 @@ function Footer() {
             </p>
           </div>
           <div>
-            <p className="font-handlee text-3xl font-bold text-sky-500 mt-10">
+            <p className="font-handlee text-3xl font-bold text-sky-500 mx-2 mt-10">
               Newsletters
             </p>
             <form className="mt-6">

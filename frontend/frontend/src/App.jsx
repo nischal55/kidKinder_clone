@@ -4,7 +4,9 @@ import {
 } from "react-router-dom";
 
 import Home from "./Pages/Home";
-import Footer from "./Components/Footer";
+import AdminLogin from "./AdminPages/AdminLogin";
+import AdminNav from "./Components/AdminNav";
+
 
 
 
@@ -16,7 +18,11 @@ function App() {
     },
     {
       path: "/features",
-      element: <Footer/>,
+      element: <AdminLogin/>,
+    },
+    {
+      path: "/Dashboard",
+      element: <AdminNav/>,
     },
   ]);
   return (
