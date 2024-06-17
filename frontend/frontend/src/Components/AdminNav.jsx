@@ -1,14 +1,20 @@
 import { FaHome } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { IoIosNotifications } from "react-icons/io";
-import { IoMdArrowDropdown } from "react-icons/io";
 import { MdClass } from "react-icons/md";
 import { SiBookmeter } from "react-icons/si";
 import { FaChalkboardTeacher } from "react-icons/fa";
 import { IoMdMenu } from "react-icons/io";
 import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { logout } from "../Redux/slice/userSlice";
+
+
+
 
 function AdminNav() {
+    const dispatch = useDispatch()
+     let user = useSelector((store) => store.user.value);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     function toggleMenu(){
@@ -56,11 +62,17 @@ function AdminNav() {
             <IoMdMenu className={`md:hidden inline-block m-5 text-2xl`}  onClick={toggleMenu}/>
             <div className={ `${isMenuOpen?'float-left':'float-right'} flex  m-4` }>
               <IoIosNotifications className="mt-1 inline-flex text-2xl text-gray-500" />
-              <div className={` flex cursor-pointer `}>
+              <div className={` flex  text-gray-600 `}>
                 <div className="mx-2 h-8 w-8 rounded-full border"></div>
                 <p className=" mt-1  text-Nunito font-bold text-[1rem]">
-                  Admin
-                  <IoMdArrowDropdown className="inline-block" />
+                  {user?<>{user.username} 
+                  <span className="mx-4 cursor-pointer bg-indigo-900 text-white p-2 rounded-lg"
+                  onClick={()=>{
+                    dispatch(logout())
+                  }}
+                  >Logout</span>
+                  </>  :"login"}
+                  
                 </p>
               </div>
             </div>

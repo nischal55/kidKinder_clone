@@ -1,9 +1,12 @@
-//import { useState } from "react";
+import AdminNav from "../Components/AdminNav";
 function AdminDash() {
-   // const [isLoginn , setIsLogin] = useState(false)
+   
     return (
         <>
+          <AdminNav/>
+          <div className=" w-[85%]  absolute top-16 left-[15%]">
             
+          </div>
         </>
     );
 }

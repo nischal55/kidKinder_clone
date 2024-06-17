@@ -4,8 +4,9 @@ import {
 } from "react-router-dom";
 
 import Home from "./Pages/Home";
+import ProtectedRoutes from "./Components/ProtectedRoutes";
+import AdminDash from "./AdminPages/AdminDash";
 import AdminLogin from "./AdminPages/AdminLogin";
-import AdminNav from "./Components/AdminNav";
 
 
 
@@ -17,13 +18,20 @@ function App() {
       element: <Home/>,
     },
     {
-      path: "/features",
-      element: <AdminLogin/>,
+      path: "/Dashboard",
+      element: <ProtectedRoutes/>,
+      children:[
+        {
+          path:"",
+          element:<AdminDash/>
+        }
+      ]
     },
     {
-      path: "/Dashboard",
-      element: <AdminNav/>,
-    },
+      path:"Auth",
+      element:<AdminLogin/>
+    }
+  
   ]);
   return (
     <>
