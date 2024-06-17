@@ -3,9 +3,12 @@ import axios from 'axios'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useNavigate } from "react-router-dom";
+import { setReduxUser } from "../Redux/slice/userSlice";
+import { useDispatch } from "react-redux";
 
 
 function AdminLogin() {
+    let dispatch = useDispatch();
     const navigate = useNavigate();
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
@@ -13,7 +16,7 @@ function AdminLogin() {
     function handleSubmit(e){
         e.preventDefault();
         axios.post("http://localhost:8000/api/users/auth",{username,password}).then((res)=>{
-            
+            dispatch(setReduxUser(res.data.user));
             localStorage.setItem("access_token",res.data.token)
             toast.success("sucess");
             navigate('/Dashboard')
