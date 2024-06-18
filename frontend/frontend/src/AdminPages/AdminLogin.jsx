@@ -17,7 +17,7 @@ function AdminLogin() {
         e.preventDefault();
         setUsername(e.target.elements.username.value)
         setPassword(e.target.elements.password.value)
-        axios.post("http://localhost:8000/api/users/auth",{username,password}).then((res)=>{
+        axios.post("/api/users/auth",{username,password}).then((res)=>{
             dispatch(setReduxUser(res.data.user));
             localStorage.setItem("access_token",res.data.token)
             toast.success("sucess");

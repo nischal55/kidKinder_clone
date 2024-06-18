@@ -9,7 +9,6 @@ const classSchema = new Schema({
   totalSeats:{type:String,required:true},
   classTime:{type:String,required:true},
   tutionFee :{type:String , required:true},
-  teacherId : {type:ObjectId, required:true},
   classImage : {type:String , required:true}
 });
 
