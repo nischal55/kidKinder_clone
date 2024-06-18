@@ -1,4 +1,5 @@
 import AboutUs from "../Components/AboutUs";
+import Classes from "../Components/Classes";
 import Features from "../Components/Features";
 import Footer from "../Components/Footer";
 import Navbar from "../Components/Navbar";
@@ -39,10 +40,13 @@ function Home() {
         <Features />
       </div>
       <div className="mt-24">
-        <AboutUs/>
+        <AboutUs />
       </div>
       <div className="mt-24">
-        <Footer/>
+        <Classes />
+      </div>
+      <div className="mt-24">
+        <Footer />
       </div>
     </>
   );

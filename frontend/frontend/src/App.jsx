@@ -7,7 +7,7 @@ import Home from "./Pages/Home";
 import ProtectedRoutes from "./Components/ProtectedRoutes";
 import AdminDash from "./AdminPages/AdminDash";
 import AdminLogin from "./AdminPages/AdminLogin";
-
+import Classes from "./Components/Classes";
 
 
 
@@ -30,7 +30,12 @@ function App() {
     {
       path:"Auth",
       element:<AdminLogin/>
+    },
+    {
+      path:"tst",
+      element:<Classes/>
     }
+    
   
   ]);
   return (

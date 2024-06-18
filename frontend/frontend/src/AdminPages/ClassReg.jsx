@@ -69,7 +69,7 @@ try {
               </div>
               <div>
                 <label htmlFor="">Class Image:</label>
-                <input type="file" className="mx-2 text-xs" id="imageUrl" onChange={(e)=>{setImageUrl(e.target.files[0])}}/>
+                <input type="file" className="mx-2 text-xs" required id="imageUrl" onChange={(e)=>{setImageUrl(e.target.files[0])}}/>
                 <br />
               </div>
             </div>
