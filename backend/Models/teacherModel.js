@@ -20,7 +20,8 @@ const teacherSchema = new Schema({
   contact: {type:Number,required:true},
   twitter:{type:String},
   facebook:{type:String},
-  linkedin:{type:String}
+  linkedin:{type:String},
+  subject:{type:String, required:true}
 });
 
 

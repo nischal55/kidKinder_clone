@@ -7,7 +7,7 @@ import Home from "./Pages/Home";
 import ProtectedRoutes from "./Components/ProtectedRoutes";
 import AdminDash from "./AdminPages/AdminDash";
 import AdminLogin from "./AdminPages/AdminLogin";
-import Booking from "./Components/Booking";
+import TeacherMgmt from "./AdminPages/TeacherMgmt";
 
 
 
@@ -24,7 +24,11 @@ function App() {
         {
           path:"",
           element:<AdminDash/>
-        }
+        },
+        // {
+        //   path:"/AddTeachers",
+        //   element:<TeacherMgmt/>
+        // }
       ]
     },
     {
@@ -33,7 +37,7 @@ function App() {
     },
     {
       path:"tst",
-      element:<Booking/>
+      element:<TeacherMgmt/>
     }
     
   

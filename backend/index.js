@@ -13,10 +13,12 @@ app.use(express.json())
 //import routes
 const userRoutes = require('./Routes/userRoutes');
 const companyRoutes = require('./Routes/companyRoutes');
-const classRoutes = require('./Routes/classRoutes')
+const classRoutes = require('./Routes/classRoutes');
+const teacherRoutes = require('./Routes/teacherRoutes')
 
 app.use("/api/",userRoutes);
 app.use('/api/',companyRoutes);
 app.use('/api/',classRoutes)
+app.use('/api/',teacherRoutes)
 
 app.listen(8000);

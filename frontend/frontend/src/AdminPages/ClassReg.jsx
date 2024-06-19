@@ -15,7 +15,7 @@ function ClassReg() {
  
   const handleSubmit = (e) => {
     e.preventDefault();
-try {
+
       const data = new FormData();
     data.append('file',imageUrl)
     data.append('upload_preset','kidKinder')
@@ -37,9 +37,7 @@ try {
     })
 
     
-} catch (error) {
-  alert(error)
-}
+
   };
 
 
