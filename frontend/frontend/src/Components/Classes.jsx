@@ -12,8 +12,7 @@ function Classes() {
     <>
       <div>
         <div className="flex justify-center">
-        <div className="w-12 h-0.5 bg-cyan-500 mt-3 mx-2"></div>
-        <p className="text-center font-Nunito text-cyan-500">POPULAR CLASSES</p>
+       
         <div className="w-12 h-0.5 bg-cyan-500 mt-3 mx-2"></div>
         </div>
         <h2 className="text-center font-[handlee] text-sky-900 text-4xl font-bold p-6">

@@ -7,7 +7,7 @@ import Home from "./Pages/Home";
 import ProtectedRoutes from "./Components/ProtectedRoutes";
 import AdminDash from "./AdminPages/AdminDash";
 import AdminLogin from "./AdminPages/AdminLogin";
-import Classes from "./Components/Classes";
+import Booking from "./Components/Booking";
 
 
 
@@ -33,7 +33,7 @@ function App() {
     },
     {
       path:"tst",
-      element:<Classes/>
+      element:<Booking/>
     }
     
   
