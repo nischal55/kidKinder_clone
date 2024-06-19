@@ -8,6 +8,10 @@ import ProtectedRoutes from "./Components/ProtectedRoutes";
 import AdminDash from "./AdminPages/AdminDash";
 import AdminLogin from "./AdminPages/AdminLogin";
 import TeacherMgmt from "./AdminPages/TeacherMgmt";
+import Teachers from "./Components/Teachers";
+import Teachersnav from "./Pages/Teachersnav";
+import ClassNav from "./Pages/ClassNav";
+import About from "./Pages/About";
 
 
 
@@ -25,10 +29,10 @@ function App() {
           path:"",
           element:<AdminDash/>
         },
-        // {
-        //   path:"/AddTeachers",
-        //   element:<TeacherMgmt/>
-        // }
+        {
+          path:"AddTeachers",
+          element:<TeacherMgmt/>
+        }
       ]
     },
     {
@@ -37,8 +41,20 @@ function App() {
     },
     {
       path:"tst",
-      element:<TeacherMgmt/>
-    }
+      element:<Teachers/>
+    },
+    {
+      path:"/Teachers",
+      element:<Teachersnav/>
+    },
+    {
+      path:"/Classes",
+      element:<ClassNav/>
+    },
+    {
+      path:"/About",
+      element:<About/>
+    },
     
   
   ]);

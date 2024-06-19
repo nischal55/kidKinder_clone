@@ -4,6 +4,7 @@ import Features from "../Components/Features";
 import Footer from "../Components/Footer";
 import Navbar from "../Components/Navbar";
 import Booking from "../Components/Booking";
+import Teachers from "../Components/Teachers";
 
 function Home() {
   return (
@@ -48,6 +49,9 @@ function Home() {
       </div>
       <div className="mt-24">
         <Booking />
+      </div>
+      <div className="mt-24">
+        <Teachers />
       </div>
       <div className="mt-24">
         <Footer />

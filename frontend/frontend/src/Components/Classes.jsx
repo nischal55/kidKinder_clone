@@ -12,8 +12,12 @@ function Classes() {
     <>
       <div>
         <div className="flex justify-center">
-       
-        <div className="w-12 h-0.5 bg-cyan-500 mt-3 mx-2"></div>
+          <div className="flex">
+            <div className="w-12 h-0.5 bg-cyan-500 mt-3 mx-2"></div>
+            <p className="font-Nunito text-cyan-500 text-lg">Popular Classes</p>
+
+            <div className="w-12 h-0.5 bg-cyan-500 mt-3 mx-2"></div>
+          </div>
         </div>
         <h2 className="text-center font-[handlee] text-sky-900 text-4xl font-bold p-6">
           Classes For Your kids
@@ -70,7 +74,9 @@ function Classes() {
                   </table>
                 </div>
 
-                <button className="bg-cyan-600 p-2 px-8 rounded-full text-white mx-[6rem] mb-6">Join Now</button>
+                <button className="bg-cyan-600 p-2 px-8 rounded-full text-white mx-[6rem] mb-6">
+                  Join Now
+                </button>
               </div>
             </>
           );

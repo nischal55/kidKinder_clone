@@ -44,12 +44,12 @@ function AdminNav() {
                   <li className="flex items-center gap-2 py-2 hover:text-slate-600">
                     <MdClass />
 
-                    <Link to="/">Classes</Link>
+                    <Link to="/Dashboard">Classes</Link>
                   </li>
                   <li className="flex items-center gap-2 py-2 hover:text-slate-600">
                     <FaChalkboardTeacher />
 
-                    <Link to="/">Teachers</Link>
+                    <Link to="/Dashboard/AddTeachers">Teachers</Link>
                   </li>
                 </ul>
               </div>
