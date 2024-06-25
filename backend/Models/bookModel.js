@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 const ObjectId = Schema.ObjectId;
 
 const bookSchema = new Schema({
-  title: {type:String, required:true},
+  name: {type:String, required:true},
   email:{
     type: String,
     required: true,
@@ -17,7 +17,7 @@ const bookSchema = new Schema({
       message: "email already used",
     },
   },
-  class:{type:ObjectId, required:true},
+  classId:{type:ObjectId, required:true},
   payment_status :{type:String,required:true, default:"false"}
 });
 

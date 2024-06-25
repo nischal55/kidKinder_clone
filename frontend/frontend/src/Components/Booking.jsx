@@ -4,6 +4,17 @@ import axios from 'axios';
 
 function Booking() {
   const [classes,setClass] = useState([]);
+  const [name,setName] = useState('');
+  const [email,setEmail] = useState('');
+  const [classId, setClassId] = useState('');
+  const payment_status = "pending"; 
+
+  function handleSubmimt(e){
+    e.preventDefault();
+    axios.post('/api/books',{name,email,classId,payment_status}).then((res)=>{console.log(res.data)})
+    
+  }
+
   useEffect(()=>{
       axios.get('/api/classes').then((res)=>{setClass(res.data)})
   },[])
@@ -34,15 +45,15 @@ function Booking() {
         <div>
           <div className="md:w-[400px] w-[380px] mt-4 md:mt-0  ">
             <h2 className="text-3xl text-center font-bold text-white font-handlee bg-sky-900 p-6">Book A Seat</h2>
-            <form className="p-4  bg-sky-400">
-              <input type="text" className="w-[80%] border mx-8 h-12 rounded px-2" placeholder="Your Name" required/><br /><br />
-              <input type="email" className="w-[80%] border mx-8 h-12 rounded px-2" placeholder="Your Email" required/><br /><br />
-             <select className="w-[80%] border mx-8 h-12 rounded">
+            <form className="p-4  bg-sky-400" onSubmit={handleSubmimt}>
+              <input type="text" className="w-[80%] border mx-8 h-12 rounded px-2" placeholder="Your Name" onChange={(e)=>{setName(e.target.value)}} required/><br /><br />
+              <input type="email" className="w-[80%] border mx-8 h-12 rounded px-2" placeholder="Your Email" onChange={(e)=>{setEmail(e.target.value)}} required/><br /><br />
+             <select className="w-[80%] border mx-8 h-12 rounded" onChange={(e)=>{setClassId(e.target.value)}}>
               {
                 classes.map((singleClass)=>{
                   return(
                     <>
-                    <option value="">{singleClass.title}</option>
+                    <option value={singleClass._id}>{singleClass.title}</option>
                     </>
                   )
 

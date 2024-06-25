@@ -9,6 +9,7 @@ function ProtectedRoutes() {
 
   return (
     <>
+    
       <Outlet />
     </>
   );
