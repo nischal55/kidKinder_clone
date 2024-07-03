@@ -13,6 +13,7 @@ import Teachersnav from "./Pages/Teachersnav";
 import ClassNav from "./Pages/ClassNav";
 import About from "./Pages/About";
 import ClassReg from "./AdminPages/ClassReg";
+import BlogsMgmt from "./AdminPages/BlogsMgmt";
 
 
 
@@ -37,6 +38,10 @@ function App() {
         {
           path:"AddClasses",
           element:<ClassReg/>
+        },
+        {
+          path:"BlogMgmt",
+          element:<BlogsMgmt/>
         }
       ]
     },

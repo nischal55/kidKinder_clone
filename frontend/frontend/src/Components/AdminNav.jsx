@@ -79,7 +79,7 @@ function AdminNav() {
                   <li className="flex items-center gap-2 py-2 hover:text-slate-600">
                     <LiaBlogSolid />
 
-                    <Link to="/Dashboard/AddTeachers">Blogs</Link>
+                    <Link to="/Dashboard/BlogMgmt">Blogs</Link>
                   </li>
                   <li className="flex items-center gap-2 py-2 hover:text-slate-600">
                     <MdOutlineContactMail />

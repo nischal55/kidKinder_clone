@@ -8,13 +8,14 @@ const createBook = async(req,res)=>{
         }
     }catch(e){
         res.status(500).send(e)
+        
     }
     
 }
 
 const getBooks = async(req,res)=>{
     try{
-        let books = await Book.findAll();
+        let books = await Book.find();
         if(books){
             res.send(books)
         }
