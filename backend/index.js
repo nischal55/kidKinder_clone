@@ -15,10 +15,12 @@ const userRoutes = require('./Routes/userRoutes');
 const companyRoutes = require('./Routes/companyRoutes');
 const classRoutes = require('./Routes/classRoutes');
 const teacherRoutes = require('./Routes/teacherRoutes')
+const bookRoutes = require('./Routes/bookRoutes');
 
 app.use("/api/",userRoutes);
 app.use('/api/',companyRoutes);
 app.use('/api/',classRoutes)
 app.use('/api/',teacherRoutes)
+app.use('/api/',bookRoutes)
 
 app.listen(8000);

@@ -1,4 +1,5 @@
 import { Navigate, Outlet } from "react-router-dom";
+import AdminNav from "./AdminNav";
 
 function ProtectedRoutes() {
   let user = localStorage.getItem('username')
@@ -9,7 +10,7 @@ function ProtectedRoutes() {
 
   return (
     <>
-    
+    <AdminNav/>
       <Outlet />
     </>
   );

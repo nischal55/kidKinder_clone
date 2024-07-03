@@ -12,6 +12,7 @@ import Teachers from "./Components/Teachers";
 import Teachersnav from "./Pages/Teachersnav";
 import ClassNav from "./Pages/ClassNav";
 import About from "./Pages/About";
+import ClassReg from "./AdminPages/ClassReg";
 
 
 
@@ -32,6 +33,10 @@ function App() {
         {
           path:"AddTeachers",
           element:<TeacherMgmt/>
+        },
+        {
+          path:"AddClasses",
+          element:<ClassReg/>
         }
       ]
     },

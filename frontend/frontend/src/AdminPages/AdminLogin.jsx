@@ -1,6 +1,6 @@
 import { useState } from "react";
 import axios from 'axios'
-import { ToastContainer, toast } from 'react-toastify';
+import {  toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useNavigate } from "react-router-dom";
 import { setReduxUser } from "../Redux/slice/userSlice";
@@ -31,7 +31,7 @@ function AdminLogin() {
     
     return (
         <>
-        <ToastContainer/>
+        
             <div className="w-[400px] h-[400px] shadow-md mx-auto mt-10">
                 <h2 className="text-3xl font-handlee font-bold text-center p-6 pt-16">Admin Login</h2>
                 <form onSubmit={handleSubmit} className="mx-16" >

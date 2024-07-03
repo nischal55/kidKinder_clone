@@ -1,10 +1,7 @@
-
-import ClassReg from "./ClassReg";
 function AdminDash() {
   return (
     <>
-      
-      <ClassReg/>
+
     </>
   );
 }

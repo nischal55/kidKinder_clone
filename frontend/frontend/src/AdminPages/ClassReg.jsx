@@ -1,8 +1,8 @@
 import { useState } from "react";
 import axios from 'axios'
-import { ToastContainer, toast } from 'react-toastify';
+import {  toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import AdminNav from "../Components/AdminNav";
+
 
 function ClassReg() {
   const [title, setTitle] = useState("");
@@ -45,8 +45,8 @@ function ClassReg() {
 
   return (
     <>
-    <AdminNav />
-    <ToastContainer/>
+  
+    
       <div className=" w-[85%]  absolute top-16 md:left-[15%] left-8">
         <div className="md:w-[415px] h-[560px] w-[350px] shadow-md mx-auto mt-5">
           <h2 className="text-3xl font-handlee font-bold text-center p-6 pt-16">

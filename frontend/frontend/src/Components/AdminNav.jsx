@@ -8,22 +8,30 @@ import { IoMdMenu } from "react-icons/io";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../Redux/slice/userSlice";
-
-
-
+import { MdOutlineContactMail } from "react-icons/md";
+import { LiaBlogSolid } from "react-icons/lia";
+import { GrGallery } from "react-icons/gr";
+import { SiGoogleclassroom } from "react-icons/si";
+import { SlEnvolopeLetter } from "react-icons/sl";
 
 function AdminNav() {
-    const dispatch = useDispatch()
-     let user = useSelector((store) => store.user.value);
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const dispatch = useDispatch();
+  let user = useSelector((store) => store.user.value);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-    function toggleMenu(){
-        setIsMenuOpen(!isMenuOpen)
-    }
+  function toggleMenu() {
+    setIsMenuOpen(!isMenuOpen);
+  }
   return (
     <>
       <div className="flex">
-        <div className={`${isMenuOpen?'translate-x-0 transition-all':'-translate-x-full transition-all w-0 overflow-hidden md:w-60  md:translate-x-0'} z-20  md:block`}>
+        <div
+          className={`${
+            isMenuOpen
+              ? "translate-x-0 transition-all"
+              : "-translate-x-full transition-all w-0 overflow-hidden md:w-60  md:translate-x-0"
+          } z-20  md:block`}
+        >
           <div className="bg-indigo-950 text-white min-h-screen px-4 py-4">
             <div className="container ">
               <div className="flex items-center gap-2">
@@ -39,17 +47,44 @@ function AdminNav() {
                   <li className="flex items-center gap-2 py-2 hover:text-slate-600">
                     <SiBookmeter />
 
-                    <Link to="/" className="">Bookings</Link>
+                    <Link to="/" className="">
+                      Bookings
+                    </Link>
                   </li>
                   <li className="flex items-center gap-2 py-2 hover:text-slate-600">
                     <MdClass />
 
-                    <Link to="/Dashboard">Classes</Link>
+                    <Link to="/Dashboard/AddClasses">Classes</Link>
                   </li>
                   <li className="flex items-center gap-2 py-2 hover:text-slate-600">
                     <FaChalkboardTeacher />
 
                     <Link to="/Dashboard/AddTeachers">Teachers</Link>
+                  </li>
+                  <li className="flex items-center gap-2 py-2 hover:text-slate-600">
+                  <SlEnvolopeLetter />
+
+                    <Link to="/Dashboard/AddTeachers">NewsLetters</Link>
+                  </li>
+                  <li className="flex items-center gap-2 py-2 hover:text-slate-600">
+                    <SiGoogleclassroom />
+
+                    <Link to="/Dashboard/AddTeachers">Enrollments</Link>
+                  </li>
+                  <li className="flex items-center gap-2 py-2 hover:text-slate-600">
+                    <GrGallery />
+
+                    <Link to="/Dashboard/AddTeachers">Gallery</Link>
+                  </li>
+                  <li className="flex items-center gap-2 py-2 hover:text-slate-600">
+                    <LiaBlogSolid />
+
+                    <Link to="/Dashboard/AddTeachers">Blogs</Link>
+                  </li>
+                  <li className="flex items-center gap-2 py-2 hover:text-slate-600">
+                    <MdOutlineContactMail />
+
+                    <Link to="/Dashboard/AddTeachers">Contacts</Link>
                   </li>
                 </ul>
               </div>
@@ -59,20 +94,32 @@ function AdminNav() {
         </div>
         <div className={` h-16 w-full border`}>
           <div>
-            <IoMdMenu className={`md:hidden inline-block m-5 text-2xl`}  onClick={toggleMenu}/>
-            <div className={ `${isMenuOpen?'hidden':'float-right'} flex  m-4` }>
+            <IoMdMenu
+              className={`md:hidden inline-block m-5 text-2xl`}
+              onClick={toggleMenu}
+            />
+            <div
+              className={`${isMenuOpen ? "hidden" : "float-right"} flex  m-4`}
+            >
               <IoIosNotifications className="mt-1 inline-flex text-2xl text-gray-500" />
               <div className={` flex  text-gray-600 `}>
                 <div className="mx-2 h-8 w-8 rounded-full border"></div>
                 <p className=" mt-1  text-Nunito font-bold text-[1rem]">
-                  {user?<>{user.username} 
-                  <span className="mx-4 cursor-pointer bg-indigo-900 text-white p-2 rounded-lg"
-                  onClick={()=>{
-                    dispatch(logout())
-                  }}
-                  >Logout</span>
-                  </>  :"login"}
-                  
+                  {user ? (
+                    <>
+                      {user.username}
+                      <span
+                        className="mx-4 cursor-pointer bg-indigo-900 text-white p-2 rounded-lg"
+                        onClick={() => {
+                          dispatch(logout());
+                        }}
+                      >
+                        Logout
+                      </span>
+                    </>
+                  ) : (
+                    "login"
+                  )}
                 </p>
               </div>
             </div>

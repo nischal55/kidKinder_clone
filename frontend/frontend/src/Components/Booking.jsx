@@ -6,12 +6,19 @@ function Booking() {
   const [classes,setClass] = useState([]);
   const [name,setName] = useState('');
   const [email,setEmail] = useState('');
-  const [classId, setClassId] = useState('');
+  const [classId, setClassId] = useState('6670e5f6b6ea220a4fb083e4');
   const payment_status = "pending"; 
 
   function handleSubmimt(e){
     e.preventDefault();
-    axios.post('/api/books',{name,email,classId,payment_status}).then((res)=>{console.log(res.data)})
+         axios.post('/api/books',{name,email,classId,payment_status}).then((res)=>{
+         
+          
+        })
+
+   
+
+
     
   }
 
@@ -51,9 +58,14 @@ function Booking() {
              <select className="w-[80%] border mx-8 h-12 rounded" onChange={(e)=>{setClassId(e.target.value)}}>
               {
                 classes.map((singleClass)=>{
+                  // console.log(singleClass, 'title')
                   return(
                     <>
-                    <option value={singleClass._id}>{singleClass.title}</option>
+                    <option value={singleClass._id}>{singleClass.title} 
+
+
+                      
+                    </option>
                     </>
                   )
 
