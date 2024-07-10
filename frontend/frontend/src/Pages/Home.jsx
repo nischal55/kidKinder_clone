@@ -5,6 +5,7 @@ import Footer from "../Components/Footer";
 import Navbar from "../Components/Navbar";
 import Booking from "../Components/Booking";
 import Teachers from "../Components/Teachers";
+import BlogSection from "../Components/BlogSection";
 
 function Home() {
   return (
@@ -52,6 +53,9 @@ function Home() {
       </div>
       <div className="mt-24">
         <Teachers />
+      </div>
+      <div className="mt-24">
+        <BlogSection />
       </div>
       <div className="mt-24">
         <Footer />

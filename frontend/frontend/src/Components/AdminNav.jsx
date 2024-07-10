@@ -47,7 +47,7 @@ function AdminNav() {
                   <li className="flex items-center gap-2 py-2 hover:text-slate-600">
                     <SiBookmeter />
 
-                    <Link to="/" className="">
+                    <Link to="/Dashboard/Bookings" className="">
                       Bookings
                     </Link>
                   </li>

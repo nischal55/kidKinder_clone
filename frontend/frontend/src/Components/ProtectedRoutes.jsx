@@ -7,7 +7,6 @@ function ProtectedRoutes() {
   if (!user) {
     return <Navigate to={"/Auth"} />;
   }
-
   return (
     <>
     <AdminNav/>
