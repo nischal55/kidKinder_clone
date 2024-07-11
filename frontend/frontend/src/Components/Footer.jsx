@@ -7,8 +7,26 @@ import { MdEmail } from "react-icons/md";
 import { FaPhone } from "react-icons/fa6";
 import { FaChevronRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import axios from "axios";
+import {  toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function Footer() {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+
+
+  function handleSubmit(e){
+    e.preventDefault();
+    axios.post('/api/news',{name,email}).then((res)=>{
+      toast.success(res.data);
+          setName('')
+          setEmail('')
+    }).catch((err)=>{
+      toast.error(err.response.data.message)
+    })
+  }
   return (
     <>
       <div className=" w-full bg-sky-900 ">
@@ -116,17 +134,21 @@ function Footer() {
             <p className="font-handlee text-3xl font-bold text-sky-500 mx-2 mt-10">
               Newsletters
             </p>
-            <form className="mt-6">
+            <form className="mt-6" onSubmit={handleSubmit}>
               <input
                 type="text"
                 className="rounded p-2 w-60"
                 placeholder="Your Name"
+                value={name}
+                onChange={(e)=>{setName(e.target.value)}}
               />
               <br />
               <input
                 type="text"
                 className="rounded p-2 w-60 mt-3"
                 placeholder="Your Email"
+                value={email}
+                onChange={(e)=>{setEmail(e.target.value)}}
               />
               <br />
               <input

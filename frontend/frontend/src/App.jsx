@@ -15,6 +15,7 @@ import ClassReg from "./AdminPages/ClassReg";
 import BlogsMgmt from "./AdminPages/BlogsMgmt";
 import BlogSection from "./Components/BlogSection";
 import BookingMgmt from "./AdminPages/BookingMgmt";
+import NewsMgmt from "./AdminPages/NewsMgmt";
 
 
 
@@ -47,6 +48,10 @@ function App() {
         {
           path:"Bookings",
           element:<BookingMgmt/>
+        },
+        {
+          path:"newsLetters",
+          element:<NewsMgmt/>
         },
 
       ]

@@ -66,7 +66,7 @@ function AdminNav() {
                   <li className="flex items-center gap-2 py-2 hover:text-slate-600">
                   <SlEnvolopeLetter />
 
-                    <Link to="/Dashboard/AddTeachers">NewsLetters</Link>
+                    <Link to="/Dashboard/newsLetters">NewsLetters</Link>
                   </li>
                   <li className="flex items-center gap-2 py-2 hover:text-slate-600">
                     <SiGoogleclassroom />

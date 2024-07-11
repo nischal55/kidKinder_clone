@@ -17,6 +17,7 @@ const classRoutes = require('./Routes/classRoutes');
 const teacherRoutes = require('./Routes/teacherRoutes')
 const bookRoutes = require('./Routes/bookRoutes');
 const blogRoutes = require('./Routes/blogRoutes');
+const newsRoutes = require('./Routes/newsRoutes');
 
 app.use("/api/",userRoutes);
 app.use('/api/',companyRoutes);
@@ -24,5 +25,7 @@ app.use('/api/',classRoutes)
 app.use('/api/',teacherRoutes)
 app.use('/api/',bookRoutes)
 app.use('/api/',blogRoutes)
+app.use('/api/',newsRoutes)
+
 
 app.listen(8000);
