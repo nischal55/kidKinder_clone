@@ -4,7 +4,7 @@ const createBook = async(req,res)=>{
     try{
         let book = await Book.create({...req.body})
         if(book){
-            res.send("Booking Completed");
+            res.send("Booked Successfully");
         }
     }catch(e){
         res.status(500).send(e)
@@ -15,7 +15,7 @@ const createBook = async(req,res)=>{
 
 const getBooks = async(req,res)=>{
     try{
-        let books = await Book.find();
+        let books = await Book.find().populate("classId")
         if(books){
             res.send(books)
         }

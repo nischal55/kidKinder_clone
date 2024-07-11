@@ -12,12 +12,14 @@ import { MdOutlineContactMail } from "react-icons/md";
 import { LiaBlogSolid } from "react-icons/lia";
 import { GrGallery } from "react-icons/gr";
 import { SiGoogleclassroom } from "react-icons/si";
+import { useNavigate } from "react-router-dom";
 import { SlEnvolopeLetter } from "react-icons/sl";
 
 function AdminNav() {
   const dispatch = useDispatch();
   let user = useSelector((store) => store.user.value);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
   function toggleMenu() {
     setIsMenuOpen(!isMenuOpen);
@@ -112,6 +114,7 @@ function AdminNav() {
                         className="mx-4 cursor-pointer bg-indigo-900 text-white p-2 rounded-lg"
                         onClick={() => {
                           dispatch(logout());
+                          navigate('/auth')
                         }}
                       >
                         Logout

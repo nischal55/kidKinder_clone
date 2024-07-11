@@ -9,7 +9,7 @@ const bookSchema = new Schema({
     required: true,
     validate: {
       validator: async (value) => {
-        let matched = await mongoose.models.User.findOne({ email: value });
+        let matched = await mongoose.models.Book.findOne({ email: value });
         if (matched) {
           return false;
         }
@@ -17,7 +17,7 @@ const bookSchema = new Schema({
       message: "email already used",
     },
   },
-  classId:{type:ObjectId, required:true},
+  classId:{type:ObjectId, required:true, ref:"Class"},
   payment_status :{type:String,required:true, default:"false"}
 });
 

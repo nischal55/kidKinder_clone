@@ -3,8 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 export const userSlice = createSlice({
   name: "user",
   initialState: {
-    value: null, // to simulate as not logged in
-    // value: {"name":"ram"}
+    value: localStorage.getItem("username")? localStorage.getItem("username"): null,
   },
   reducers: {
     setReduxUser: (state, action) => {
@@ -13,7 +12,8 @@ export const userSlice = createSlice({
     },
     logout: (state) => {
       state.value = null;
-      localStorage.removeItem("token")
+      localStorage.removeItem("access_token")
+      localStorage.removeItem("username")
     },
   },
 });

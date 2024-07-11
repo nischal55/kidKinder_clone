@@ -1,6 +1,8 @@
 import { TiTick } from "react-icons/ti";
 import { useState,useEffect } from "react";
 import axios from 'axios';
+import {  toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function Booking() {
   const [classes,setClass] = useState([]);
@@ -8,16 +10,18 @@ function Booking() {
   const [email,setEmail] = useState('');
   const [classId, setClassId] = useState('6670e5f6b6ea220a4fb083e4');
   const payment_status = "pending"; 
+  
+
 
   function handleSubmimt(e){
     e.preventDefault();
          axios.post('/api/books',{name,email,classId,payment_status}).then((res)=>{
-         
-          
+          toast.success(res.data);
+          setName('')
+          setEmail('')
+        }).catch((err)=>{
+          toast.error(err.response.data.message)
         })
-
-   
-
 
     
   }
@@ -53,8 +57,8 @@ function Booking() {
           <div className="md:w-[400px] w-[380px] mt-4 md:mt-0  ">
             <h2 className="text-3xl text-center font-bold text-white font-handlee bg-sky-900 p-6">Book A Seat</h2>
             <form className="p-4  bg-sky-400" onSubmit={handleSubmimt}>
-              <input type="text" className="w-[80%] border mx-8 h-12 rounded px-2" placeholder="Your Name" onChange={(e)=>{setName(e.target.value)}} required/><br /><br />
-              <input type="email" className="w-[80%] border mx-8 h-12 rounded px-2" placeholder="Your Email" onChange={(e)=>{setEmail(e.target.value)}} required/><br /><br />
+              <input type="text" className="w-[80%] border mx-8 h-12 rounded px-2" placeholder="Your Name" onChange={(e)=>{setName(e.target.value)}} value={name} required/><br /><br />
+              <input type="email" className="w-[80%] border mx-8 h-12 rounded px-2" placeholder="Your Email" value={email} onChange={(e)=>{setEmail(e.target.value)}} required/><br /><br />
              <select className="w-[80%] border mx-8 h-12 rounded" onChange={(e)=>{setClassId(e.target.value)}}>
               {
                 classes.map((singleClass)=>{
