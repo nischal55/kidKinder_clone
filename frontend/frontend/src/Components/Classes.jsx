@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 function Classes() {
   const [classes, setClasses] = useState([]);
@@ -74,9 +75,9 @@ function Classes() {
                   </table>
                 </div>
 
-                <button className="bg-cyan-600 p-2 px-8 rounded-full text-white mx-[6rem] mb-6">
+                <Link to={`/join/${singleClass._id}`} className="bg-cyan-600 p-2 px-8 rounded-full text-white mx-[6rem] mb-6">
                   Join Now
-                </button>
+                </Link>
               </div>
             </>
           );

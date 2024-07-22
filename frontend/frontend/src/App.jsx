@@ -12,10 +12,11 @@ import Teachersnav from "./Pages/Teachersnav";
 import ClassNav from "./Pages/ClassNav";
 import About from "./Pages/About";
 import ClassReg from "./AdminPages/ClassReg";
-import BlogsMgmt from "./AdminPages/BlogsMgmt";
 import BlogSection from "./Components/BlogSection";
 import BookingMgmt from "./AdminPages/BookingMgmt";
 import NewsMgmt from "./AdminPages/NewsMgmt";
+import ViewBlogs from "./AdminPages/ViewBlogs";
+import JoinNow from "./Components/JoinNow";
 
 
 
@@ -43,7 +44,7 @@ function App() {
         },
         {
           path:"BlogMgmt",
-          element:<BlogsMgmt/>
+          element:<ViewBlogs/>
         },
         {
           path:"Bookings",
@@ -76,6 +77,11 @@ function App() {
       path:"/About",
       element:<About/>
     },
+    {
+      path:"/join/:classId",
+      element:<JoinNow/>
+    },
+
     
   
   ]);
