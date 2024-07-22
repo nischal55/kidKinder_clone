@@ -28,7 +28,7 @@ function Classes() {
         {classes.map((singleClass) => {
           return (
             <>
-              <div className="w-[22rem] bg-gray-100 rounded-lg">
+              <div className="w-[22rem] h-fit pb-10 bg-gray-100 rounded-lg">
                 <div>
                   <img
                     src={singleClass.classImage}

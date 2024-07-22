@@ -3,7 +3,7 @@ const Enrollment = require('../Models/EnrollmentModel');
 
 const createEnrollments = async(req,res)=>{
     try{
-        let enroll = Enrollment.create({...req});
+        let enroll =await Enrollment.create({...req.body});
         if(enroll){
             res.send("Created Successfully")
         }
@@ -18,7 +18,7 @@ const createEnrollments = async(req,res)=>{
 const getEnrollments = async(req,res)=>{
 
     try{
-        let enroll = Enrollment.find();
+        let enroll =await Enrollment.find();
         if(enroll){
             res.send(enroll)
         }

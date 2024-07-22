@@ -14,7 +14,7 @@ const createCompany = async(req,res,next) =>{
 
 const getCompany = async(req,res,next) =>{
     try{
-        let company = Company.find();
+        let company =await Company.find();
         if(company){
             res.send(company);
         }

@@ -78,7 +78,7 @@ function App() {
       element:<About/>
     },
     {
-      path:"/join/:classId",
+      path:"/join/:slugClass",
       element:<JoinNow/>
     },
 

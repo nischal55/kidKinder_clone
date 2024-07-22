@@ -3,14 +3,16 @@ import { useState, useEffect } from "react";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import { useParams } from "react-router-dom";
+import {  toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function JoinNow() {
   const [classes, setClasses] = useState([]);
   const [email,setEmail] =useState('');
-  const [name,setName]= useState('');
+  const [StudentName,setName]= useState('');
   const [contact,setContact] = useState('');
-  const { classId } = useParams();
-  const [selectedClass , setSelectedClass] = useState(classId);
+  const { slugClass } = useParams();
+  const [ClassId , setSelectedClass] = useState(slugClass);
 
   useEffect(() => {
     axios.get("/api/classes").then((res) => {
@@ -22,7 +24,15 @@ function JoinNow() {
 
   const handleSubmit=(e)=>{
     e.preventDefault();
-      console.log({email:email,name:name,contact:contact,selectedClass:selectedClass})
+      axios.post('/api/enrolls',{email,StudentName,contact,ClassId}).then((res)=>{
+        toast.success(res.data);
+        setEmail('');
+        setName('');
+        setContact('');
+      }).catch((err)=>{
+        toast.error(err.response.data.message)
+      })
+      
   }
   return (
     <>
@@ -39,7 +49,7 @@ function JoinNow() {
           <br />
           <label htmlFor="">Full Name:</label>
           <br />
-          <input type="text" id="" required className="w-full h-10 border" value={name} onChange={(e)=>{setName(e.target.value)}}/>
+          <input type="text" id="" required className="w-full h-10 border" value={StudentName} onChange={(e)=>{setName(e.target.value)}}/>
           <br />
           <br />
           <label htmlFor="">Contact:</label>
@@ -49,11 +59,11 @@ function JoinNow() {
           <br />
           <label htmlFor="">Classes:</label>
           <br />
-          <select name="" id="" className="w-full border h-10" value={selectedClass} onChange={(e)=>{setSelectedClass(e.target.value)}}>
+          <select name="" id="" className="w-full border h-10"  onChange={(e)=>{setSelectedClass(e.target.value)}}>
             {classes.map((classData) => {
               return (
                 <>
-                  {classData._id == classId ? (
+                  {classData._id == slugClass ? (
                     <>
                       <option value={classData._id} selected>{classData.title}</option>
                     </>

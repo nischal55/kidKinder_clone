@@ -56,15 +56,15 @@ function Navbar() {
           <Link to={`/home`} className="p-[10px] hover:text-sky-500">
             Contact
           </Link>
-          <button className="block bg-cyan-600 p-[10px] rounded-full mt-[20px]  w-28 text-white md:hidden">
+          <Link className="block bg-cyan-600 p-[10px] rounded-full mt-[20px]  w-28 text-white md:hidden text-center" to={`/join/0`}>
             Join Class
-          </button>
+          </Link>
         </div>
 
         <div>
-          <button className="hidden md:bg-sky-600 md:p-[5px] md:rounded-full md:mt-[25px] md:w-28 md:text-white md:block">
+          <Link className="hidden md:bg-sky-600 md:p-[5px] md:rounded-full md:mt-[25px] md:w-28 md:text-white md:block text-center" to={`/join/0`}>
             Join Class
-          </button>
+          </Link>
         </div>
       </div>
     </>
