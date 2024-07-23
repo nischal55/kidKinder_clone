@@ -1,5 +1,8 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
+import { FaRegEdit } from "react-icons/fa";
+import { MdOutlineDeleteOutline } from "react-icons/md";
+import { Link } from 'react-router-dom';
 
 function ViewBlogs() {
     const [blogs,setBlogs] = useState([]);
@@ -14,16 +17,17 @@ function ViewBlogs() {
     <section className="mx-auto w-full  px-4 py-4">
         <div className="flex flex-col space-y-4  md:flex-row md:items-center md:justify-between md:space-y-0">
           <div>
-            <h2 className="text-lg font-semibold">NewsLetters</h2>
+            <h2 className="text-lg font-semibold">Blogs</h2>
            
           </div>
           <div>
-            <button
+            <Link
               type="button"
+              to={`/Dashboard/blogAdd`}
               className="rounded-md bg-blue-900 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
             >
-              Add new employee
-            </button>
+              Add new Blogs
+            </Link>
           </div>
         
         </div>
@@ -125,8 +129,9 @@ function ViewBlogs() {
                           <div className="flex items-center">
                            
                             <div className="ml-4">
-                              <div className="text-sm font-medium text-gray-900">
-                                edit
+                              <div className="text-sm font-medium text-gray-900 flex">
+                              <FaRegEdit className='text-blue-800 text-xl'/>
+                              <MdOutlineDeleteOutline className='text-red-500 text-xl'/>
                               </div>
                               
                             </div>

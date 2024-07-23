@@ -17,6 +17,9 @@ import BookingMgmt from "./AdminPages/BookingMgmt";
 import NewsMgmt from "./AdminPages/NewsMgmt";
 import ViewBlogs from "./AdminPages/ViewBlogs";
 import JoinNow from "./Components/JoinNow";
+import BlogsMgmt from "./AdminPages/BlogsMgmt";
+import ViewEnrollments from "./AdminPages/ViewEnrollments";
+import ViewTeachers from "./AdminPages/ViewTeachers";
 
 
 
@@ -53,6 +56,18 @@ function App() {
         {
           path:"newsLetters",
           element:<NewsMgmt/>
+        },
+        {
+          path:"blogAdd",
+          element:<BlogsMgmt/>
+        },
+        {
+          path:"viewEnrollment",
+          element:<ViewEnrollments/>
+        },
+        {
+          path:"teachers",
+          element:<ViewTeachers/>
         },
 
       ]
