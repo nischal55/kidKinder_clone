@@ -20,6 +20,7 @@ import JoinNow from "./Components/JoinNow";
 import BlogsMgmt from "./AdminPages/BlogsMgmt";
 import ViewEnrollments from "./AdminPages/ViewEnrollments";
 import ViewTeachers from "./AdminPages/ViewTeachers";
+import ViewClasses from "./AdminPages/ViewClasses";
 
 
 
@@ -68,6 +69,10 @@ function App() {
         {
           path:"teachers",
           element:<ViewTeachers/>
+        },
+        {
+          path:"classes",
+          element:<ViewClasses/>
         },
 
       ]

@@ -56,7 +56,7 @@ function AdminNav() {
                   <li className="flex items-center gap-2 py-2 hover:text-slate-600">
                     <MdClass />
 
-                    <Link to="/Dashboard/AddClasses">Classes</Link>
+                    <Link to="/Dashboard/classes">Classes</Link>
                   </li>
                   <li className="flex items-center gap-2 py-2 hover:text-slate-600">
                     <FaChalkboardTeacher />

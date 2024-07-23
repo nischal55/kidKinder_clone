@@ -4,29 +4,30 @@ import { FaRegEdit } from "react-icons/fa";
 import { MdOutlineDeleteOutline } from "react-icons/md";
 import { Link } from "react-router-dom";
 
-function ViewTeachers() {
-  const [teachers, setTeacher] = useState([]);
 
-  useEffect(() => {
-    axios.get("/api/teachers").then((res) => {
-      setTeacher(res.data);
-    });
-  });
+function ViewClasses() {
+    const [classes,setClasses] = useState([])
 
-  return (
-    <>
-      <div className="absolute top-24 w-9/12 md:left-72 left-10">
+    useEffect(()=>{
+        axios.get('/api/classes').then((res)=>{
+            setClasses(res.data)
+        })
+    })
+
+    return (
+        <>
+            <div className="absolute top-24 w-9/12 md:left-72  left-10">
         <section className="mx-auto w-full max-w-7xl px-4 py-4">
           <div className="flex flex-col space-y-4 md:flex-row md:items-center md:justify-between md:space-y-0">
             <div>
-              <h2 className="text-lg font-semibold">Teachers</h2>
+              <h2 className="text-lg font-semibold">Classes</h2>
             </div>
             <div>
               <Link
-                to={`/dashboard/addTeachers`}
+                to={`/dashboard/addClasses`}
                 className="rounded-md bg-black px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
               >
-                Add new teachers
+                Add New Classes
               </Link>
             </div>
           </div>
@@ -41,26 +42,39 @@ function ViewTeachers() {
                           scope="col"
                           className="px-4 py-3.5 text-left text-sm font-normal text-gray-700"
                         >
-                          <span>Teacher</span>
+                          <span>Classes</span>
                         </th>
-                        <th
-                          scope="col"
-                          className="px-12 py-3.5 text-left text-sm font-normal text-gray-700"
-                        >
-                          Title
-                        </th>
+                      
 
                         <th
                           scope="col"
-                          className="px-4 py-3.5 text-left text-sm font-normal text-gray-700"
+                          className="px-4 py-3.5 text-left text-sm font-normal text-gray-700 "
                         >
-                          Contact
+                          Description
                         </th>
                         <th
                           scope="col"
                           className="px-4 py-3.5 text-left text-sm font-normal text-gray-700"
                         >
-                          Social Media
+                          Age of kids
+                        </th>
+                        <th
+                          scope="col"
+                          className="px-4 py-3.5 text-left text-sm font-normal text-gray-700"
+                        >
+                          Total Seats
+                        </th>
+                        <th
+                          scope="col"
+                          className="px-4 py-3.5 text-left text-sm font-normal text-gray-700"
+                        >
+                          Class Time
+                        </th>
+                        <th
+                          scope="col"
+                          className="px-4 py-3.5 text-left text-sm font-normal text-gray-700"
+                        >
+                          Tution Fees
                         </th>
                         <th
                           scope="col"
@@ -71,7 +85,7 @@ function ViewTeachers() {
                       </tr>
                     </thead>
                     <tbody className="divide-y divide-gray-200 bg-white">
-                      {teachers.map((teacher) => {
+                      {classes.map((classData) => {
                         return (
                           <>
                             <tr>
@@ -80,41 +94,46 @@ function ViewTeachers() {
                                   <div className="h-10 w-10 flex-shrink-0">
                                     <img
                                       className="h-10 w-10 rounded-full object-cover"
-                                      src={teacher.teacherImage}
+                                      src={classData.classImage}
                                       alt=""
                                     />
                                   </div>
                                   <div className="ml-4">
                                     <div className="text-sm font-medium text-gray-900">
-                                     {teacher.teacher_name}
-                                    </div>
-                                    <div className="text-sm text-gray-700">
-                                      {teacher.email}
+                                     {classData.title}
                                     </div>
                                   </div>
                                 </div>
                               </td>
-                              <td className="whitespace-nowrap px-12 py-4">
-                                <div className="text-sm text-gray-900 ">
-                                  {teacher.subject}
+                              <td className="whitespace-nowrap  py-4 px-4 text-ellipsis text-center">
+                                <div className="text-sm text-gray-900 w-12 overflow-hidden ">
+                                  {classData.desc}
                                 </div>
                               
                               </td>
                               <td className="whitespace-nowrap px-4 py-4">
                                 <div className="text-sm text-gray-900 ">
-                                  {teacher.contact}
+                                  {classData.ageOfKids}
                                 </div>
                               </td>
                               <td className="whitespace-nowrap px-4 py-4">
                                 <div className="text-sm text-gray-900 ">
-                                  {teacher.facebook}
+                                  {classData.totalSeats}
                                 </div>
+                               
+                              </td>
+                              
+                              <td className="whitespace-nowrap px-4 py-4">
                                 <div className="text-sm text-gray-900 ">
-                                  {teacher.twitter}
+                                  {classData.classTime}
                                 </div>
+                               
+                              </td>
+                              <td className="whitespace-nowrap px-4 py-4">
                                 <div className="text-sm text-gray-900 ">
-                                  {teacher.linkedin}
+                                  {classData.tutionFee}
                                 </div>
+                               
                               </td>
 
                               <td className="whitespace-nowrap px-4 py-4  text-sm font-medium">
@@ -135,8 +154,8 @@ function ViewTeachers() {
           </div>
         </section>
       </div>
-    </>
-  );
+        </>
+    );
 }
 
-export default ViewTeachers;
+export default ViewClasses;
