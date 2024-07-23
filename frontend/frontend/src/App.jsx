@@ -21,6 +21,7 @@ import BlogsMgmt from "./AdminPages/BlogsMgmt";
 import ViewEnrollments from "./AdminPages/ViewEnrollments";
 import ViewTeachers from "./AdminPages/ViewTeachers";
 import ViewClasses from "./AdminPages/ViewClasses";
+import DeleteClass from "./AdminPages/DeleteClass";
 
 
 
@@ -74,6 +75,11 @@ function App() {
           path:"classes",
           element:<ViewClasses/>
         },
+        {
+          path:"deleteClass/:Classid",
+          element:<DeleteClass/>
+        },
+        
 
       ]
     },

@@ -22,4 +22,15 @@ const getAllClass = async(req,res,next) =>{
     }
 }
 
-module.exports = {createClass,getAllClass}
+const deleteClass = async(req,res)=>{
+    try{
+        let deleteData = await Class.deleteOne({_id : req.params.id});
+        if(deleteData){
+            res.send("Deleted Successfully")
+        }
+    }catch(e){
+        res.status(500).send(e)
+    }
+}
+
+module.exports = {createClass,getAllClass,deleteClass}

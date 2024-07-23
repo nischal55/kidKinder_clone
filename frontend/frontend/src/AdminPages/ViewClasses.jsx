@@ -139,7 +139,9 @@ function ViewClasses() {
                               <td className="whitespace-nowrap px-4 py-4  text-sm font-medium">
                               <div className="text-sm font-medium text-gray-900 flex">
                               <FaRegEdit className='text-blue-800 text-xl'/>
+                              <Link to={`/dashboard/deleteClass/${classData._id}`}>
                               <MdOutlineDeleteOutline className='text-red-500 text-xl'/>
+                              </Link>
                               </div>
                               </td>
                             </tr>

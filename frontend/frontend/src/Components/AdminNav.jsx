@@ -1,6 +1,5 @@
 import { FaHome } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import { IoIosNotifications } from "react-icons/io";
 import { MdClass } from "react-icons/md";
 import { SiBookmeter } from "react-icons/si";
 import { FaChalkboardTeacher } from "react-icons/fa";
@@ -14,6 +13,7 @@ import { GrGallery } from "react-icons/gr";
 import { SiGoogleclassroom } from "react-icons/si";
 import { useNavigate } from "react-router-dom";
 import { SlEnvolopeLetter } from "react-icons/sl";
+import { IoIosLogOut } from "react-icons/io";
 
 function AdminNav() {
   const dispatch = useDispatch();
@@ -103,21 +103,21 @@ function AdminNav() {
             <div
               className={`${isMenuOpen ? "hidden" : "float-right"} flex  m-4`}
             >
-              <IoIosNotifications className="mt-1 inline-flex text-2xl text-gray-500" />
+              
               <div className={` flex  text-gray-600 `}>
-                <div className="mx-2 h-8 w-8 rounded-full border"></div>
+               
                 <p className=" mt-1  text-Nunito font-bold text-[1rem]">
                   {user ? (
                     <>
                       {user.username}
                       <span
-                        className="mx-4 cursor-pointer bg-indigo-900 text-white p-2 rounded-lg"
+                        className="mx-4 cursor-pointer  p-2 rounded-lg"
                         onClick={() => {
                           dispatch(logout());
                           navigate('/auth')
                         }}
                       >
-                        Logout
+                        <IoIosLogOut className="inline-flex text-2xl"/>
                       </span>
                     </>
                   ) : (

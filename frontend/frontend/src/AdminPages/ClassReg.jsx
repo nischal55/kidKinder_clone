@@ -22,18 +22,22 @@ function ClassReg() {
     data.append('upload_preset','kidKinder')
     data.append('cloud_name','dm9bvl0lc')
 
-    axios.post('https://api.cloudinary.com/v1_1/dm9bvl0lc/image/upload',data).then((res)=>{setClassImage(res.data.url)})
+    axios.post('https://api.cloudinary.com/v1_1/dm9bvl0lc/image/upload',data).then((res)=>{setClassImage(res.data.url)
 
-    axios.post('/api/classes',{title,desc,ageOfKids,totalSeats,classTime,tutionFee,classImage}).then((res)=>{
-      e.target.elements.title.value = ""
-      e.target.elements.imageUrl.value = ""
-      e.target.elements.age.value = ""
-      e.target.elements.seats.value = ""
-      e.target.elements.time.value = ""
-      e.target.elements.tution.value = ""
-      e.target.elements.desc.value = ""
-      console.log(res.data)
-      toast.success("Success");
+
+
+      axios.post('/api/classes',{title,desc,ageOfKids,totalSeats,classTime,tutionFee,classImage}).then((res)=>{
+        e.target.elements.title.value = ""
+        e.target.elements.imageUrl.value = ""
+        e.target.elements.age.value = ""
+        e.target.elements.seats.value = ""
+        e.target.elements.time.value = ""
+        e.target.elements.tution.value = ""
+        e.target.elements.desc.value = ""
+        console.log(res.data)
+        toast.success("Success");
+    })
+
     
     })
 
