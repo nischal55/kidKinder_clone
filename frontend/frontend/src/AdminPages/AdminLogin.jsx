@@ -20,7 +20,7 @@ function AdminLogin() {
         axios.post("/api/users/auth",{username,password}).then((res)=>{
             dispatch(setReduxUser(res.data.user));
             localStorage.setItem("access_token",res.data.token)
-            localStorage.setItem("username",res.data.user.usernmae)
+            localStorage.setItem("username",res.data.user.username)
             toast.success("sucess");
             navigate('/Dashboard')
             
