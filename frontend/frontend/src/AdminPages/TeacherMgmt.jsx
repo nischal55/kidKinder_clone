@@ -23,15 +23,19 @@ function TeacherMgmt() {
         data.append('upload_preset','kidKinder')
         data.append('cloud_name','dm9bvl0lc')
     
-        axios.post('https://api.cloudinary.com/v1_1/dm9bvl0lc/image/upload',data).then((res)=>{setTeacherImage(res.data.url)})
+        axios.post('https://api.cloudinary.com/v1_1/dm9bvl0lc/image/upload',data).then((res)=>{setTeacherImage(res.data.url)
+
+
+          axios.post('/api/teachers',{teacher_name,email,teacherImage,contact,twitter,facebook,linkedin,subject}).then((res)=>{
+          
+          console.log(res.data)
+          toast.success("Success");
+          
+        })
+
+        })
     
         
-        axios.post('/api/teachers',{teacher_name,email,teacherImage,contact,twitter,facebook,linkedin,subject}).then((res)=>{
-        
-        console.log(res.data)
-        toast.success("Success");
-        
-      })
       
      
       };

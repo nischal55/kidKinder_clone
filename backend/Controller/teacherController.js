@@ -25,4 +25,15 @@ const getAllTeacher = async(req,res,next) =>{
     }
 }
 
-module.exports = {createTeacher , getAllTeacher}
+const deleteTeacher = async(req,res)=>{
+    try{
+        let teacher = await Teacher.deleteOne({_id:req.params.id})
+        if(teacher){
+            res.send("Deleted Successfully")
+        }
+    }catch(e){
+        rs.status(500).send(e)
+    }
+}
+
+module.exports = {createTeacher , getAllTeacher,deleteTeacher}

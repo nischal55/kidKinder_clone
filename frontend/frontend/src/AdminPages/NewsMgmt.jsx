@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { FaRegEdit } from "react-icons/fa";
 import { useEffect, useState } from 'react';
 
 function NewsMgmt() {
@@ -83,7 +84,7 @@ function NewsMgmt() {
                            
                             <div className="ml-4">
                               <div className="text-sm font-medium text-gray-900">
-                                edit
+                              <FaRegEdit className='text-blue-800 text-xl'/>
                               </div>
                               
                             </div>

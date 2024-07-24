@@ -86,7 +86,7 @@ function ViewTeachers() {
                                   </div>
                                   <div className="ml-4">
                                     <div className="text-sm font-medium text-gray-900">
-                                     {teacher.teacher_name}
+                                      {teacher.teacher_name}
                                     </div>
                                     <div className="text-sm text-gray-700">
                                       {teacher.email}
@@ -98,7 +98,6 @@ function ViewTeachers() {
                                 <div className="text-sm text-gray-900 ">
                                   {teacher.subject}
                                 </div>
-                              
                               </td>
                               <td className="whitespace-nowrap px-4 py-4">
                                 <div className="text-sm text-gray-900 ">
@@ -118,10 +117,12 @@ function ViewTeachers() {
                               </td>
 
                               <td className="whitespace-nowrap px-4 py-4  text-sm font-medium">
-                              <div className="text-sm font-medium text-gray-900 flex">
-                              <FaRegEdit className='text-blue-800 text-xl'/>
-                              <MdOutlineDeleteOutline className='text-red-500 text-xl'/>
-                              </div>
+                                <div className="text-sm font-medium text-gray-900 flex">
+                                  <FaRegEdit className="text-blue-800 text-xl" />
+                                  <Link to={`/dashboard/deleteTeacher/${teacher._id}`}>
+                                    <MdOutlineDeleteOutline className="text-red-500 text-xl" />
+                                  </Link>
+                                </div>
                               </td>
                             </tr>
                           </>
